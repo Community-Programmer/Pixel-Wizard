@@ -1,11 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - SLIET Mentorship Platform</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/loader.css">
+  </head>
+  <body>
+
+    <div class="loader">
+        <img src="../assets/images/logo.png" alt="logo" class="logo">
+        <h1 class="title">Sant Longowal Institute of Engineering & Technology, Longowal</h1>
+        <div class="bar-loader">
+            <div class="bar"></div>
+        </div>
+    </div>
+   
+    <header>
+      <nav class="container">
+        <div class="logo">SLIET Mentorship</div>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#mentors">Mentors</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+        <div class="mobile-menu">☰</div>
+      </nav>
+    </header>
+    <main>
+  
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Empowering Students Through Mentorship</h1>
+          <p>Connect with Faculty Mentors for Academic and Career Guidance</p>
+          <a href="#" class="btn btn-primary">Find a Mentor</a>
+          <a href="#" class="btn btn-secondary">Become a Mentor</a>
+        </div>
+      </section>
+ 
+      <section id="features" class="features">
+        <div class="container">
+          <h2>Platform Features</h2>
+          <div class="features-grid">
+            <div class="feature">
+              <i>📅</i>
+              <h3>Automated Booking System</h3>
+              <p>
+                Book one-on-one sessions with ease, directly from your mentor's
+                available time slots.
+              </p>
+            </div>
+            <div class="feature">
+              <i>👤</i>
+              <h3>Personalized Mentorship</h3>
+              <p>
+                Receive tailored academic and career guidance from faculty
+                mentors.
+              </p>
+            </div>
+            <div class="feature">
+              <i>💬</i>
+              <h3>Simple Communication</h3>
+              <p>
+                Easily communicate with your mentor and stay updated with
+                session reminders.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+    <script src="../assets/js/global.js"></script>
+  </body>
 </html>

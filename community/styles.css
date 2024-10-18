@@ -61,24 +61,12 @@ body {
     align-items: center;
 }
 
-.theme-toggle,
-.notification-toggle {
+.theme-toggle {
     background: none;
     border: none;
     color: white;
     cursor: pointer;
     margin-right: 1rem;
-}
-
-.notification-badge {
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    padding: 0.2rem 0.5rem;
-    font-size: 0.8rem;
-    position: absolute;
-    top: -5px;
-    right: -5px;
 }
 
 .user-menu {

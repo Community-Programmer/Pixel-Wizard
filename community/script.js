@@ -189,12 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Notification toggle (placeholder functionality)
-  const notificationToggle = document.getElementById("notificationToggle");
-  notificationToggle.addEventListener("click", () => {
-    alert("Notification settings would be toggled here.");
-  });
-
   // User menu toggle
   const userMenu = document.querySelector(".user-menu");
   const userDropdown = document.querySelector(".user-dropdown");

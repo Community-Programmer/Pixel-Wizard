@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+.faculty-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.faculty-info {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.faculty-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+.faculty-name {
+    font-size: 1.5em;
+    margin: 0 0 5px 0;
+}
+.faculty-department {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.faculty-contact {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+.faculty-contact a {
+    color: #fff;
+    text-decoration: none;
+}
+.faculty-content {
+    padding: 20px;
+}
+@media (min-width: 768px) {
+    .faculty-card {
+        flex-direction: row;
+    }
+    .faculty-info {
+        width: 30%;
+    }
+    .faculty-content {
+        width: 70%;
+    }
+}

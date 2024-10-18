@@ -148,6 +148,10 @@ body {
     display: block;
   }
   
+  .dropdown li {
+    list-style: none;
+  }
+  
   .nav-list>li:hover>a {
     background-color: #f0f0f0;
   }

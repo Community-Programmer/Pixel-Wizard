@@ -190,6 +190,9 @@ body {
   font-size: 0.8em;
   margin-left: 5px;
 }
+.dropdown li {
+  list-style: none;
+}
 
 .mobile-menu-toggle {
   display: none;

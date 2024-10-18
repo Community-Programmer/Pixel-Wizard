@@ -41,6 +41,13 @@ h1 {
     font-style: italic;
     margin-bottom: 10px;
 }
+.faculty-education {
+    margin-bottom: 10px;
+}
+.faculty-contact p {
+    display: block; /* Ensures email and phone are on separate lines */
+    margin: 0.5rem 0; /* Adds space between the two sections */
+}
 .faculty-contact {
     display: flex;
     justify-content: center;

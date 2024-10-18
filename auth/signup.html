@@ -21,8 +21,8 @@
       </div>
       <div class="login-container">
         <div class="login-header">
-          <h1>Login to Your Account</h1>
-          <p>Don't have an account? <a href="#" id="signupLink">Sign up</a></p>
+          <h1>Create Your Account</h1>
+          <p>Already have an account? <a href="#" id="signupLink">Login</a></p>
         </div>
         <form id="loginForm" class="login-form">
           <div class="remember-forgot">
@@ -38,6 +38,10 @@
             </label>
           </div>
           <div class="input-group">
+            <label for="name">Name</label>
+            <input type="name" id="name" name="name" required />
+          </div>
+          <div class="input-group">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required />
             <span class="input-icon">📧</span>
@@ -47,18 +51,10 @@
             <input type="password" id="password" name="password" required />
             <span class="input-icon toggle-password">👁️</span>
           </div>
-          <div class="remember-forgot">
-            <label class="remember-me">
-              <input type="checkbox" id="rememberMe" />
-              <span class="checkmark"></span>
-              Remember me
-            </label>
-            <a href="#" id="forgotPassword"> Forgot password?</a>
-          </div>
-          <button type="submit" class="login-button">Log In</button>
+          <button type="submit" class="login-button">Sign Up</button>
         </form>
         <div class="social-login">
-          <p>Or login with</p>
+          <p>Or Sign up with</p>
           <div class="social-buttons">
             <button class="social-button google">
               <img

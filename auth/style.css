@@ -98,6 +98,7 @@ body {
 
 .login-form {
     max-width: 400px;
+    width: 40vw;
     margin: 0 auto;
 }
 
@@ -141,13 +142,17 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.remember-me {
+.remember-me,
+.student,
+.teacher {
     display: flex;
     align-items: center;
     cursor: pointer;
 }
 
-.remember-me input {
+.remember-me input,
+.student input,
+.teacher input {
     margin-right: 0.5rem;
 }
 

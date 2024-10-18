@@ -7,6 +7,14 @@
   --light-text: #ffffff;
   --card-bg: #ffffff;
   --primary-color: #4a90e2;
+  --secondary-color: #f3f4f6;
+  --text-color: #333;
+  --text-color-light: #666;
+  --background-color: #ffffff;
+  --accent-color: #ff6b6b;
+  --success-color: #2ecc71;
+  --border-color: #e2e8f0;
+  --transition-speed: 0.3s;
 }
 
 /* Navbar */

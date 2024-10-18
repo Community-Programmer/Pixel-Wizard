@@ -1,78 +1,102 @@
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm");
+  const signupForm = document.getElementById("signupForm");
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
+  const nameInput = document.getElementById("name");
+  const studentCheckbox = document.querySelector(".student input");
+  const teacherCheckbox = document.querySelector(".teacher input");
   const togglePassword = document.querySelector(".toggle-password");
-  const signupLink = document.getElementById("signupLink");
-  const forgotPassword = document.getElementById("forgotPassword");
   const modal = document.getElementById("modal");
   const modalTitle = document.getElementById("modalTitle");
   const modalMessage = document.getElementById("modalMessage");
   const closeModal = document.querySelector(".close");
 
   // Toggle password visibility
-  togglePassword.addEventListener("click", () => {
-    const type =
-      passwordInput.getAttribute("type") === "password" ? "text" : "password";
-    passwordInput.setAttribute("type", type);
-    togglePassword.textContent = type === "password" ? "👁️" : "👁️‍🗨️";
-  });
-
-  // Form submission
-  loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = emailInput.value;
-    const password = passwordInput.value;
-
-    // Simple validation
-    if (email === "user@example.com" && password === "password") {
-      showModal("Success", "Login successful!");
-    } else {
-      showModal("Error", "Invalid email or password");
-      loginForm.classList.add("shake");
-      setTimeout(() => loginForm.classList.remove("shake"), 500);
-    }
-  });
-
-  // Sign up link
-  signupLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    showModal("Sign Up", "Sign up functionality would be implemented here.");
-  });
-
-  // Forgot password link
-  forgotPassword.addEventListener("click", (e) => {
-    e.preventDefault();
-    showModal(
-      "Forgot Password",
-      "Password reset functionality would be implemented here."
-    );
-  });
-
-  // Social login buttons
-  document.querySelectorAll(".social-button").forEach((button) => {
-    button.addEventListener("click", () => {
-      const provider = button.classList.contains("google")
-        ? "Google"
-        : "GitHub";
-      showModal(
-        "Social Login",
-        `${provider} login functionality would be implemented here.`
-      );
+  if (togglePassword) {
+    togglePassword.addEventListener("click", () => {
+      const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+      passwordInput.setAttribute("type", type);
+      togglePassword.textContent = type === "password" ? "👁️" : "👁️‍🗨️";
     });
-  });
+  }
 
-  // Close modal
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
+  // Form submission (Login)
+  if (loginForm) {
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = emailInput.value;
+      const password = passwordInput.value;
 
-  // Close modal when clicking outside
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
+      // Retrieve user data using the email as the key
+      const storedUserData = localStorage.getItem(email);
+      if (storedUserData) {
+        const { password: storedPassword } = JSON.parse(storedUserData);
+
+        // Validate user credentials
+        if (password === storedPassword) {
+          showModal("Success", "Login successful! Redirecting...");
+          setTimeout(() => {
+            window.location.href = "/home/index.html";
+          }, 2000);
+        } else {
+          showModal("Error", "Invalid email or password.");
+          loginForm.classList.add("shake");
+          setTimeout(() => loginForm.classList.remove("shake"), 500);
+        }
+      } else {
+        showModal("Error", "Invalid email or password.");
+        loginForm.classList.add("shake");
+        setTimeout(() => loginForm.classList.remove("shake"), 500);
+      }
+    });
+  }
+
+  // Form submission (Signup)
+  if (signupForm) {
+    signupForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+      const role = studentCheckbox.checked ? "Student" : teacherCheckbox.checked ? "Teacher" : null;
+
+      if (!role) {
+        showModal("Error", "Please select either Student or Teacher.");
+        return;
+      }
+
+      if (!name || !email || !password) {
+        showModal("Error", "Please fill out all the fields.");
+        return;
+      }
+
+      if (localStorage.getItem(email)) {
+        showModal("Error", "Email is already registered.");
+        return;
+      }
+
+      saveUserData(name, email, password, role);
+      showModal("Success", "Sign up successful! Redirecting...");
+      setTimeout(() => {
+        window.location.href = "/auth/login.html";
+      }, 2000);
+      signupForm.reset(); // Reset the form after successful signup
+    });
+  }
+
+  // Save user data in local storage
+  function saveUserData(name, email, password, role) {
+    const userData = {
+      name: name,
+      email: email,
+      password: password,
+      role: role,
+    };
+    localStorage.setItem(email, JSON.stringify(userData)); 
+    console.log("User data saved:", userData);
+  }
 
   // Show modal function
   function showModal(title, message) {
@@ -81,25 +105,35 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.style.display = "block";
   }
 
-  backgroundImage.addEventListener("mouseleave", () => {
-    backgroundImage.style.transform = "scale(1) translate(0, 0)";
-  });
+  // Close modal
+  if (closeModal) {
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
 
   // Email validation
-  emailInput.addEventListener("blur", () => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(emailInput.value)) {
-      emailInput.style.borderColor = "red";
-    } else {
-      emailInput.style.borderColor = "green";
-    }
-  });
+  if (emailInput) {
+    emailInput.addEventListener("blur", () => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      emailInput.style.borderColor = emailRegex.test(emailInput.value) ? "green" : "red";
+    });
+  }
 
   // Password strength indicator
-  passwordInput.addEventListener("input", () => {
-    const strength = calculatePasswordStrength(passwordInput.value);
-    updatePasswordStrength(strength);
-  });
+  if (passwordInput) {
+    passwordInput.addEventListener("input", () => {
+      const strength = calculatePasswordStrength(passwordInput.value);
+      updatePasswordStrength(strength);
+    });
+  }
 
   function calculatePasswordStrength(password) {
     let strength = 0;
@@ -121,9 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
     strengthIndicator.style.backgroundColor = colors[strength];
     strengthIndicator.style.width = `${(strength + 1) * 25}%`;
 
-    const existingIndicator = passwordInput.parentNode.querySelector(
-      ".strength-indicator"
-    );
+    const existingIndicator = passwordInput.parentNode.querySelector(".strength-indicator");
     if (existingIndicator) {
       existingIndicator.remove();
     }

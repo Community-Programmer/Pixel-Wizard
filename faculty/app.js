@@ -47,12 +47,13 @@ const facultyData = [
 
     {
         name: "Dr. Gurjinder Kaur",
-        department: "Professor",
+        department: "Associate Professor",
         education: "Ph.D. (not specified)",
-        email: "mjrsingh@yahoo.com",
-        phone: "01672-253212",
-        photo: "http://sliet.ac.in/wp-content/uploads/avatars/35/5e69c6be20c7e-bpfull.jpg",
-        content: "Dr. Major Singh Goraya leads the Electrical Engineering department. His research focuses on Power Systems and Renewable Energy, contributing to sustainable energy solutions."
+        email: "gurjinder13@yahoo.com",
+        phone: "+91-1672-253326",
+        photo: "http://sliet.ac.in/wp-content/uploads/avatars/14/5f2245e7a7f1bde5dee5bda48e09d411-bpfull.jpg",
+        content: "Dr. Manoj Sachan leads the Electrical Engineering department. His research focuses on Power Systems and Renewable Energy, contributing to sustainable energy solutions.",
+        link:"http://cs.sliet.ac.in/people/daman/",
     },
 
     {

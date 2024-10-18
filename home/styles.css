@@ -42,10 +42,21 @@ body {
   align-items: center;
 }
 
-.left-content,
+.left-content {
+  display: flex;
+  align-items: center;
+}
+
 .right-content {
   display: flex;
   align-items: center;
+  gap: 50px;
+}
+
+.quick-link-one {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .language-select {
@@ -69,7 +80,7 @@ body {
 .quick-link {
   color: white;
   text-decoration: none;
-  margin-left: 15px;
+  /* margin-left: 15px; */
 }
 
 .locate-us {

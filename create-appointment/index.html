@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule a Mentorship Appointment</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="background-shape shape-1"></div>
+      <div class="background-shape shape-2"></div>
+      <header class="header">
+        <h1>Schedule Your Mentorship Session</h1>
+      </header>
+      <div class="progress-bar">
+        <div class="progress-step active">
+          <span class="progress-step-number">1</span>
+          <p>Select Mentor</p>
+        </div>
+        <div class="progress-step">
+          <span class="progress-step-number">2</span>
+          <p>Choose Date</p>
+        </div>
+        <div class="progress-step">
+          <span class="progress-step-number">3</span>
+          <p>Pick Time</p>
+        </div>
+      </div>
+      <form id="appointmentForm">
+        <div class="form-group">
+          <h2>1. Choose Your Mentor</h2>
+          <label for="mentorSelect">Select a Mentor:</label>
+          <select id="mentorSelect" required>
+            <option value="">Choose a mentor</option>
+          </select>
+        </div>
+        <div id="mentorInfo" class="mentor-info"></div>
+        <div class="form-group">
+          <h2>2. Select Appointment Date</h2>
+          <label for="appointmentDate">Select a Date:</label>
+          <input type="date" id="appointmentDate" required disabled />
+        </div>
+        <div class="form-group">
+          <h2>3. Choose Available Time Slot</h2>
+          <label for="appointmentTime">Select a Time:</label>
+          <div id="timeSlots" class="time-slots">
+            <!-- Time slots will be populated dynamically -->
+          </div>
+        </div>
+        <div class="form-group">
+          <h2>4. Additional Information</h2>
+          <label for="appointmentNotes">Additional Notes:</label>
+          <textarea
+            id="appointmentNotes"
+            rows="4"
+            placeholder="Any additional information for your mentor"
+          ></textarea>
+        </div>
+        <button type="submit" id="submitButton" disabled>
+          Schedule Appointment
+        </button>
+      </form>
+    </div>
+
+    <div id="successPage" class="success-page" style="display: none">
+      <div class="success-content">
+        <div class="success-icon">✅</div>
+        <h2>Appointment Scheduled Successfully!</h2>
+        <div class="appointment-details">
+          <h3>Appointment Details</h3>
+          <p><strong>Mentor:</strong> <span id="successMentor"></span></p>
+          <p><strong>Date:</strong> <span id="successDate"></span></p>
+          <p><strong>Time:</strong> <span id="successTime"></span></p>
+          <p>
+            <strong>Additional Notes:</strong> <span id="successNotes"></span>
+          </p>
+        </div>
+        <button id="newAppointmentBtn" class="primary-btn">
+          Schedule Another Appointment
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

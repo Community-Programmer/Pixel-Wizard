@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mentor Admin Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #6200ea;
+        --primary-light: #9d46ff;
+        --primary-dark: #0a00b6;
+        --secondary: #00c853;
+        --secondary-light: #5efc82;
+        --secondary-dark: #009624;
+        --background: #f5f5f5;
+        --surface: #ffffff;
+        --error: #b00020;
+        --text-primary: #212121;
+        --text-secondary: #757575;
+        --text-on-primary: #ffffff;
+        --text-on-secondary: #000000;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--background);
+        color: var(--text-primary);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        background-color: var(--primary);
+        color: var(--text-on-primary);
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 1.5rem;
+      }
+
+      nav ul li a {
+        color: var(--text-on-primary);
+        text-decoration: none;
+        font-weight: 600;
+        transition: opacity 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        opacity: 0.8;
+      }
+
+      main {
+        margin-top: 80px;
+        padding: 2rem 0;
+      }
+
+      .welcome-card {
+        background-color: var(--surface);
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .welcome-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .welcome-card h1 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .stats-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .stat-card {
+        background-color: var(--surface);
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .stat-card h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-card p {
+        color: var(--text-secondary);
+        font-weight: 600;
+      }
+
+      .appointments-section {
+        background-color: var(--surface);
+        border-radius: 8px;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .appointments-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .appointments-title {
+        font-size: 1.5rem;
+        color: var(--primary);
+      }
+
+      .search-bar {
+        display: flex;
+        align-items: center;
+      }
+
+      .search-bar input {
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--text-secondary);
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+
+      .search-bar button {
+        background-color: var(--primary);
+        color: var(--text-on-primary);
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        margin-left: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .search-bar button:hover {
+        background-color: var(--primary-dark);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+
+      th,
+      td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid var(--background);
+      }
+
+      th {
+        background-color: var(--primary-light);
+        color: var(--text-on-primary);
+        font-weight: 600;
+      }
+
+      tr:hover {
+        background-color: rgba(98, 0, 234, 0.05);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-schedule {
+        background-color: var(--secondary);
+        color: var(--text-on-secondary);
+      }
+
+      .btn-cancel {
+        background-color: var(--error);
+        color: var(--text-on-primary);
+      }
+
+      .btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+      }
+
+      .table-wrapper {
+        overflow-x: auto;
+        max-width: 100%;
+      }
+
+      .dialog {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .dialog-content {
+        background-color: var(--surface);
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 8px;
+      }
+
+      .dialog-content h2 {
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      .dialog-content select,
+      .dialog-content input,
+      .dialog-content textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid var(--text-secondary);
+        border-radius: 4px;
+      }
+
+      .dialog-content button {
+        background-color: var(--primary);
+        color: var(--text-on-primary);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+
+      .dialog-content button:hover {
+        background-color: var(--primary-dark);
+      }
+
+      .time-slots-section {
+        background-color: var(--surface);
+        border-radius: 12px;
+        padding: 2.5rem;
+        margin-top: 2rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .time-slots-section h2 {
+        font-size: 1.8rem;
+        color: var(--primary-dark);
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .time-slot-controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .input-group {
+        flex: 1;
+        min-width: 150px;
+      }
+
+      .input-group label {
+        display: block;
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        margin-bottom: 0.5rem;
+      }
+
+      .time-slot-controls input {
+        width: 100%;
+        padding: 0.6rem;
+        border: 1px solid var(--text-secondary);
+        border-radius: 6px;
+        font-size: 0.95rem;
+      }
+
+      .primary-btn {
+        padding: 0.8rem 1.2rem;
+        background-color: var(--primary);
+        color: var(--text-on-primary);
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        flex: 1;
+        min-width: 150px;
+      }
+
+      .primary-btn:hover {
+        background-color: var(--primary-dark);
+        transform: scale(1.05);
+      }
+
+      #timeSlotsList {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+
+      #timeSlotsList li {
+        background-color: var(--background);
+        padding: 1rem;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s ease;
+      }
+
+      #timeSlotsList li:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      #timeSlotsList li button {
+        background-color: var(--error);
+        color: var(--text-on-primary);
+        border: none;
+        padding: 0.5rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      #timeSlotsList li button:hover {
+        background-color: var(--error-dark);
+      }
+
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav ul {
+          margin-top: 1rem;
+        }
+
+        nav ul li {
+          margin-left: 0;
+          margin-right: 1rem;
+        }
+
+        .stats-container {
+          grid-template-columns: 1fr;
+        }
+
+        .appointments-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .search-bar {
+          margin-top: 1rem;
+          width: 100%;
+        }
+
+        .search-bar input {
+          flex-grow: 1;
+        }
+
+        .btn {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">Mentor Dashboard</div>
+          <nav>
+            <ul>
+              <li><a href="#" class="active">Dashboard</a></li>
+              <li><a href="#">Appointments</a></li>
+              <li><a href="#">Profile</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="welcome-card">
+          <h1>Welcome back, Mentor!</h1>
+          <p>Here's an overview of your mentorship appointments for today.</p>
+        </div>
+
+        <div class="stats-container">
+          <div class="stat-card">
+            <h2 id="scheduled-count">0</h2>
+            <p>Scheduled Appointments</p>
+          </div>
+          <div class="stat-card">
+            <h2 id="pending-count">0</h2>
+            <p>Pending Appointments</p>
+          </div>
+          <div class="stat-card">
+            <h2 id="cancelled-count">0</h2>
+            <p>Cancelled Appointments</p>
+          </div>
+        </div>
+
+        <div class="appointments-section">
+          <div class="appointments-header">
+            <h2 class="appointments-title">Upcoming Appointments</h2>
+            <div class="search-bar">
+              <input
+                type="text"
+                placeholder="Search appointments..."
+                id="search-input"
+              />
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Student Name</th>
+                  <th>Status</th>
+                  <th>Date and Time</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="appointment-table">
+                <!-- Table rows will be dynamically added here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="scheduleDialog" class="dialog">
+        <div class="dialog-content">
+          <h2>Schedule Appointment</h2>
+          <input type="date" id="appointmentDate" />
+          <input type="time" id="appointmentTime" />
+          <textarea
+            id="additionalNotes"
+            placeholder="Additional notes"
+          ></textarea>
+          <button id="confirmSchedule">Confirm</button>
+          <button class="closeDialog">Close</button>
+        </div>
+      </div>
+
+      <div id="cancelDialog" class="dialog">
+        <div class="dialog-content">
+          <h2>Cancel Appointment</h2>
+          <textarea
+            id="cancellationReason"
+            placeholder="Reason for cancellation"
+          ></textarea>
+          <button id="confirmCancel">Confirm</button>
+          <button class="closeDialog">Close</button>
+        </div>
+      </div>
+
+      <div class="time-slots-section">
+        <h2>Selected Time Slots</h2>
+        <div class="time-slot-controls">
+          <div class="input-group">
+            <label for="slotDate">Select Date</label>
+            <input type="date" id="slotDate" required />
+          </div>
+          <div class="input-group">
+            <label for="slotTime">Select Time</label>
+            <input type="time" id="slotTime" required />
+          </div>
+          <button id="addTimeSlot" class="primary-btn">Add Time Slot</button>
+        </div>
+        <ul id="timeSlotsList"></ul>
+      </div>
+    </main>
+
+    <script>
+      // Sample data for appointments
+      const appointments = [
+        {
+          id: 1,
+          student: "Alice Johnson",
+          status: "Pending",
+          date: "2023-05-15 10:00 AM",
+          mentor: "Dr. Smith",
+        },
+        {
+          id: 2,
+          student: "Bob Williams",
+          status: "Scheduled",
+          date: "2023-05-16 2:00 PM",
+          mentor: "Prof. Brown",
+        },
+        {
+          id: 3,
+          student: "Charlie Davis",
+          status: "Cancelled",
+          date: "2023-05-17 11:30 AM",
+          mentor: "Dr. Wilson",
+        },
+        {
+          id: 4,
+          student: "Diana Miller",
+          status: "Pending",
+          date: "2023-05-18 3:00 PM",
+          mentor: "Prof. Taylor",
+        },
+        {
+          id: 5,
+          student: "Ethan Moore",
+          status: "Scheduled",
+          date: "2023-05-19 9:30 AM",
+          mentor: "Dr. Anderson",
+        },
+      ];
+
+      // Function to populate the table
+      function populateTable(appointmentsData) {
+        const tableBody = document.getElementById("appointment-table");
+        tableBody.innerHTML = "";
+
+        appointmentsData.forEach((appointment) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+                    <td>${appointment.id}</td>
+                    <td>${appointment.student}</td>
+                    <td>${appointment.status}</td>
+                    <td>${appointment.date}</td>
+                    
+                    <td>
+                        <a href="#" class="btn btn-schedule">Schedule</a>
+                        <a href="#" class="btn btn-cancel">Cancel</a>
+                    </td>
+                `;
+          tableBody.appendChild(row);
+        });
+      }
+
+      // Function to update stats
+      function updateStats() {
+        const scheduledCount = appointments.filter(
+          (a) => a.status === "Scheduled"
+        ).length;
+        const pendingCount = appointments.filter(
+          (a) => a.status === "Pending"
+        ).length;
+        const cancelledCount = appointments.filter(
+          (a) => a.status === "Cancelled"
+        ).length;
+
+        document.getElementById("scheduled-count").textContent = scheduledCount;
+        document.getElementById("pending-count").textContent = pendingCount;
+        document.getElementById("cancelled-count").textContent = cancelledCount;
+      }
+
+      // Function to handle search
+      function handleSearch() {
+        const searchTerm = document
+          .getElementById("search-input")
+          .value.toLowerCase();
+        const filteredAppointments = appointments.filter(
+          (appointment) =>
+            appointment.student.toLowerCase().includes(searchTerm) ||
+            appointment.mentor.toLowerCase().includes(searchTerm) ||
+            appointment.status.toLowerCase().includes(searchTerm)
+        );
+        populateTable(filteredAppointments);
+      }
+
+      // Event listener for search button
+
+      // Event listener for search input (search as you type)
+      document
+        .getElementById("search-input")
+        .addEventListener("input", handleSearch);
+
+      // Initialize the dashboard
+      populateTable(appointments);
+      updateStats();
+
+      // Add animation to stat cards
+      const statCards = document.querySelectorAll(".stat-card");
+      statCards.forEach((card) => {
+        card.addEventListener("mouseover", () => {
+          card.style.transform = "translateY(-10px) scale(1.05)";
+        });
+        card.addEventListener("mouseout", () => {
+          card.style.transform = "translateY(0) scale(1)";
+        });
+      });
+
+      // Add this to your existing <script> tag, after the existing code
+
+      // Get dialog elements
+      const scheduleDialog = document.getElementById("scheduleDialog");
+      const cancelDialog = document.getElementById("cancelDialog");
+
+      // Function to open schedule dialog
+      function openScheduleDialog(appointmentId) {
+        scheduleDialog.style.display = "block";
+        scheduleDialog.dataset.appointmentId = appointmentId;
+      }
+
+      // Function to open cancel dialog
+      function openCancelDialog(appointmentId) {
+        cancelDialog.style.display = "block";
+        cancelDialog.dataset.appointmentId = appointmentId;
+      }
+
+      // Function to close dialogs
+      function closeDialog() {
+        scheduleDialog.style.display = "none";
+        cancelDialog.style.display = "none";
+      }
+
+      // Event listeners for dialog buttons
+      document.querySelectorAll(".closeDialog").forEach((button) => {
+        button.addEventListener("click", closeDialog);
+      });
+
+      document
+        .getElementById("confirmSchedule")
+        .addEventListener("click", () => {
+          const appointmentId = scheduleDialog.dataset.appointmentId;
+          const mentor = document.getElementById("mentorSelect").value;
+          const date = document.getElementById("appointmentDate").value;
+          const time = document.getElementById("appointmentTime").value;
+          const notes = document.getElementById("additionalNotes").value;
+
+          // Here you would typically send this data to your backend
+          console.log(
+            `Scheduling appointment ${appointmentId} with ${mentor} on ${date} at ${time}. Notes: ${notes}`
+          );
+
+          closeDialog();
+        });
+
+      document.getElementById("confirmCancel").addEventListener("click", () => {
+        const appointmentId = cancelDialog.dataset.appointmentId;
+        const reason = document.getElementById("cancellationReason").value;
+
+        // Here you would typically send this data to your backend
+        console.log(
+          `Cancelling appointment ${appointmentId}. Reason: ${reason}`
+        );
+
+        closeDialog();
+      });
+
+      // Modify the populateTable function to add event listeners to the buttons
+      function populateTable(appointmentsData) {
+        const tableBody = document.getElementById("appointment-table");
+        tableBody.innerHTML = "";
+
+        appointmentsData.forEach((appointment) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+      <td>${appointment.id}</td>
+      <td>${appointment.student}</td>
+      <td>${appointment.status}</td>
+      <td>${appointment.date}</td>
+      
+      <td>
+        <button class="btn btn-schedule">Schedule</button>
+        <button class="btn btn-cancel">Cancel</button>
+      </td>
+    `;
+
+          const scheduleButton = row.querySelector(".btn-schedule");
+          const cancelButton = row.querySelector(".btn-cancel");
+
+          scheduleButton.addEventListener("click", () =>
+            openScheduleDialog(appointment.id)
+          );
+          cancelButton.addEventListener("click", () =>
+            openCancelDialog(appointment.id)
+          );
+
+          tableBody.appendChild(row);
+        });
+      }
+      let timeSlots = [];
+
+      function addTimeSlot() {
+        const dateInput = document.getElementById("slotDate");
+        const timeInput = document.getElementById("slotTime");
+
+        if (dateInput.value && timeInput.value) {
+          const newSlot = `${dateInput.value} ${timeInput.value}`;
+          if (!timeSlots.includes(newSlot)) {
+            timeSlots.push(newSlot);
+            updateTimeSlotsList();
+            dateInput.value = "";
+            timeInput.value = "";
+          } else {
+            alert("This time slot already exists!");
+          }
+        } else {
+          alert("Please select both date and time!");
+        }
+      }
+
+      function removeTimeSlot(index) {
+        timeSlots.splice(index, 1);
+        updateTimeSlotsList();
+      }
+
+      function updateTimeSlotsList() {
+        const timeSlotsList = document.getElementById("timeSlotsList");
+        timeSlotsList.innerHTML = "";
+
+        timeSlots.forEach((slot, index) => {
+          const li = document.createElement("li");
+
+          const slotInfo = document.createElement("span");
+          slotInfo.textContent = slot;
+          li.appendChild(slotInfo);
+
+          const removeButton = document.createElement("button");
+          removeButton.textContent = "Remove";
+          removeButton.onclick = () => removeTimeSlot(index);
+
+          li.appendChild(removeButton);
+          timeSlotsList.appendChild(li);
+        });
+      }
+
+      document
+        .getElementById("addTimeSlot")
+        .addEventListener("click", addTimeSlot);
+
+      updateTimeSlotsList();
+    </script>
+  </body>
+</html>

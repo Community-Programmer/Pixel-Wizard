@@ -5,7 +5,7 @@ const facultyData = [
     education: "Ph.D., M.E.",
     email: "birmohansingh@sliet.ac.in",
     phone: "+91-1672-253208",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/5/6fc17d6735998f4f22a0e91fbf43b75c-bpfull.jpg",
+    photo: "../assets/images/F1.jpg",
     professor_details : [
         {
             "name": "Dr. Birmohan Singh",
@@ -37,7 +37,7 @@ const facultyData = [
     education: "Ph.D., M.Tech, B.Tech.",
     email: "damanpreets@sliet.ac.in",
     phone: "+91-1672-253210",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/4/65783e7db0473-bpfull.jpg",
+    photo: "../assets/images/F2.jpg",
     professor_details: [
       {
           "name": "Dr. Damanpreet Singh",
@@ -66,7 +66,7 @@ const facultyData = [
     education: "Ph.D., M.Tech, B.Tech.",
     email: "mjrsingh@yahoo.com",
     phone: "01672-253212",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/35/5e69c6be20c7e-bpfull.jpg",
+    photo: "../assets/images/F3.jpg",
     professor_details: [
       {
           "name": "Dr. Major Singh Goraya",
@@ -95,7 +95,7 @@ const facultyData = [
     education: "Ph.D., M.Tech, B.Tech.",
     email: "manojsachan@gmail.com",
     phone: "+91-1672-253214",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/6/605c66bd3e3bc-bpfull.jpg",
+    photo: "../assets/images/F4.jpg",
     professor_details: [
       {
           "name": "Dr. Manoj Sachan",
@@ -124,7 +124,7 @@ const facultyData = [
     education: "Ph.D., M.Tech, B.Tech.",
     email: "gurjinder13@yahoo.com",
     phone: "+91-1672-253326",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/14/5f2245e7a7f1bde5dee5bda48e09d411-bpfull.jpg",
+    photo: "../assets/images/F5.jpg",
     professor_details: [
       {
           "name": "Dr. Gurjinder Kaur",
@@ -154,7 +154,7 @@ const facultyData = [
     education: "Ph.D., M.Tech, B.Tech.",
     email: "amarnath@sliet.ac.in",
     phone: "01672-253610",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/467/66b8bb350cc46-bpfull.jpg",
+    photo: "../assets/images/F6.jpg",
     professor_details: [
       {
         "name": "Dr. Amar Nath",
@@ -183,7 +183,7 @@ const facultyData = [
     education: "Ph.D., M.Tech, B.Tech.",
     email: "jagdeep@sliet.ac.in",
     phone: "01672-253527",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/466/66f81ca30f4ff-bpfull.jpg",
+    photo: "../assets/images/F7.jpg",
     professor_details: [
       {
           "name": "Dr. Jagdeep Singh",
@@ -212,7 +212,7 @@ const facultyData = [
     education: "Ph.D., M.Tech, B.Tech.",
     email: "manmindersingh@sliet.ac.in",
     phone: "+91-8146060800",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/16/66693282b6269-bpfull.jpg",
+    photo: "../assets/images/F8.jpg",
     professor_details: [
       {
           "name": "Dr. Manminder Singh",
@@ -241,7 +241,7 @@ const facultyData = [
     education: "Ph.D., M.Tech, B.Tech.",
     email: "preetpal@sliet.ac.in",
     phone: "9463838725",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/349/632d98c75d80f-bpfull.jpg",
+    photo: "../assets/images/F9.jpg",
     professor_details: [
       {
           "name": "Dr. Jagdeep Singh",
@@ -270,7 +270,7 @@ const facultyData = [
     education: "Ph.D., M.Tech, B.Tech.",
     email: "NA",
     phone: "NA",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/493/6165aace595a1-bpfull.jpg",
+    photo: "../assets/images/F12.jpg",
     professor_details: [
       {
           "name": "Dr. Utkarsh",
@@ -298,7 +298,7 @@ const facultyData = [
     education: "Ph.D., M.Tech, B.Tech.",
     email: "vinod5881@gmail.com",
     phone: "+91-1672-253218",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/468/64e3532d30fac-bpfull.jpg",
+    photo: "../assets/images/F13.jpg",
     professor_details: [
       {
           "name": "Dr. VINOD KUMAR VERMA",
@@ -326,7 +326,7 @@ const facultyData = [
     education: "Ph.D., M.Tech, B.Tech.",
     email: "jaspalsingh@sliet.ac.in",
     phone: "01672-253327",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/36/e0a878e8162fd75cb5eb6929d98df5c1-bpfull.jpg",
+    photo: "../assets/images/F14.jpg",
     professor_details: [
       {
           "name": "Jaspal Singh",
@@ -354,7 +354,7 @@ const facultyData = [
     education: "Ph.D., M.Tech, B.Tech.",
     email: "rahulgautam@sliet.ac.in",
     phone: "+91-1672-25 3612",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/350/666bf221c60a0-bpfull.jpg",
+    photo: "../assets/images/F15.jpg",
     professor_details: [
       {
           "name": "Rahul Gautam",
@@ -384,7 +384,7 @@ const facultyData = [
     email: "sachdeva.jp@gmail.com",
     phone: "+91-9988380938",
     photo:
-      "http://sliet.ac.in/wp-content/uploads/avatars/344/64edd5a68d11b-bpfull.jpg",
+      "../assets/images/F16.jpg",
       professor_details: [
         {
             "name": "Dr. Jatinder Pal Singh",
@@ -412,7 +412,7 @@ const facultyData = [
     email: "sukhpreet.manshahia@gmail.com",
     phone: "9463697946",
     photo:
-      "http://sliet.ac.in/wp-content/uploads/avatars/353/60544f9339252-bpfull.jpg",
+      "../assets/images/F18.jpg",
       professor_details: [
         {
             "name": "Sukhpreet Singh",
@@ -468,7 +468,7 @@ const facultyData = [
     email: "chinu@sliet.ac.in",
     phone: "9915025805",
     photo:
-      "http://sliet.ac.in/wp-content/uploads/avatars/477/605067c46b9c6-bpfull.jpg",
+      "../assets/images/F19.jpg",
       professor_details: [
         {
             "name": "Chinu",
@@ -498,7 +498,7 @@ const facultyData = [
     email: "contactvikashgarg@gmail.com",
     phone: "9988610629",
     photo:
-      "http://sliet.ac.in/wp-content/uploads/avatars/457/605b0275612df-bpfull.jpg",
+      "../assets/images/F20.jpg",
       professor_details: [
         {
             "name": "Dr. Vikash Kumar Garg",
@@ -554,7 +554,7 @@ const facultyData = [
   email: "NA",
   phone: "NA",
   photo:
-    "https://www.gravatar.com/avatar/6f05b70f110917eb0889a844d9c02124?s=100&r=g&d=mm",
+    "../assets/images/F21.jpg",
     professor_details: [
       {
           "name": "Sakshi Bansal",

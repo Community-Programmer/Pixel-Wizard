@@ -141,7 +141,7 @@ appointmentForm.addEventListener("submit", function (e) {
   document.getElementById("successNotes").textContent =
     appointmentData.notes || "None";
 
-  document.querySelector(".container").style.display = "none";
+  document.querySelector(".appointment_container").style.display = "none";
   document.getElementById("successPage").style.display = "flex";
 });
 
@@ -149,7 +149,7 @@ appointmentForm.addEventListener("submit", function (e) {
 document
   .getElementById("newAppointmentBtn")
   .addEventListener("click", function () {
-    document.querySelector(".container").style.display = "block";
+    document.querySelector(".appointment_container").style.display = "block";
     document.getElementById("successPage").style.display = "none";
     appointmentForm.reset();
     appointmentDate.disabled = true;

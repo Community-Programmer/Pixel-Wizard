@@ -23,7 +23,7 @@ body {
   padding: 0;
 }
 
-.container {
+.appointment_container {
   max-width: 800px;
   margin: 2rem auto;
   padding: 0;
@@ -99,9 +99,9 @@ label {
   color: var(--text-secondary);
 }
 
-select,
+.form-group select,
 input[type="date"],
-textarea {
+.form-group textarea {
   width: 100%;
   padding: 0.75rem;
   border: 2px solid #e0e0e0;
@@ -111,14 +111,14 @@ textarea {
   transition: border-color 0.3s ease;
 }
 
-select:focus,
+.form-group select:focus,
 input[type="date"]:focus,
-textarea:focus {
+.form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
 }
 
-button {
+#appointmentForm button {
   background-color: var(--primary);
   color: var(--text-on-primary);
   border: none;
@@ -130,12 +130,12 @@ button {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
+#appointmentForm button:hover {
   background-color: var(--primary-dark);
   transform: translateY(-2px);
 }
 
-button:disabled {
+#appointmentForm button:disabled {
   background-color: var(--text-secondary);
   cursor: not-allowed;
   transform: none;
@@ -312,7 +312,7 @@ button:disabled {
 }
 
 @media (max-width: 768px) {
-  .container {
+  .appointment_container {
     margin: 1rem;
   }
 

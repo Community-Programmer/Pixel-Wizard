@@ -1,273 +1,288 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    /* max-width: 1200px; */
-    margin: 0 auto;
-    /* padding: 20px; */
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  /* padding: 20px; */
+  background-color: #f4f4f4;
 }
 
 /* NavBar */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-  }
-  
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  
-  /* Top Bar Styles */
-  .top-bar {
-    background-color: #1a237e;
-    color: white;
-    padding: 10px 0;
-  }
-  
-  .top-bar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .left-content {
-    display: flex;
-    align-items: center;
-  }
-  
-  .right-content {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-  }
-  
-  .quick-link-one {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .language-select {
-    background-color: #1a237e;
-    color: white;
-    border: none;
-    margin-right: 15px;
-  }
-  
-  .phone-link {
-    display: flex;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .phone-icon {
-    margin-right: 5px;
-  }
-  
-  .quick-link {
-    color: white;
-    text-decoration: none;
-    /* margin-left: 15px; */
-  }
-  
-  .locate-us {
-    background-color: #4caf50;
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    margin-left: 15px;
-  }
-  
-  /* Middle Bar Styles */
-  .middle-bar {
-    background-color: white;
-    padding: 20px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .logohome {
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
-  }
-  
-  .college-name {
-    text-align: center;
-  }
-  
-  .college-name-kannada {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #1a237e;
-  }
-  
-  .college-name-english {
-    font-size: 0.9rem;
-    color: #1a237e;
-  }
-  
-  /* Main Navigation Styles */
-  .main-nav {
-    background-color: white;
-    padding: 10px 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .nav-list {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-  }
-  
-  .nav-list>li {
-    position: relative;
-  }
-  
-  .nav-list>li>a {
-    color: #1a237e;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: block;
-  }
-  
-  .dropdown li {
-    list-style: none;
-  }
-  
-  .nav-list>li:hover>a {
-    background-color: #f0f0f0;
-  }
-  
-  .dropdown {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 150px;
-    z-index: 1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .has-dropdown:hover .dropdown {
-    display: block;
-  }
-  
-  .dropdown li a {
-    color: #1a237e;
-    padding: 10px 15px;
-    display: block;
-    text-decoration: none;
-  }
-  
-  .dropdown li a:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .dropdown-arrow {
-    font-size: 0.8em;
-    margin-left: 5px;
-  }
-  
-  .mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: #1a237e;
-    font-size: 24px;
-    cursor: pointer;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Top Bar Styles */
+.top-bar {
+  background-color: #1a237e;
+  color: white;
+  padding: 10px 0;
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+}
+
+.right-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.quick-link-one {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.language-select {
+  background-color: #1a237e;
+  color: white;
+  border: none;
+  margin-right: 15px;
+}
+
+.phone-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.phone-icon {
+  margin-right: 5px;
+}
+
+.quick-link {
+  color: white;
+  text-decoration: none;
+  /* margin-left: 15px; */
+}
+
+.locate-us {
+  background-color: #4a90e2;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-left: 15px;
+}
+
+/* Middle Bar Styles */
+.middle-bar {
+  background-color: white;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logohome {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.college-name {
+  text-align: center;
+}
+
+.college-name-kannada {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1a237e;
+}
+
+.college-name-english {
+  font-size: 0.9rem;
+  color: #1a237e;
+}
+
+/* Main Navigation Styles */
+.main-nav {
+  background-color: white;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.nav-list>li {
+  position: relative;
+}
+
+.nav-list>li>a {
+  color: #1a237e;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+}
+
+.dropdown li {
+  list-style: none;
+}
+
+.nav-list>li:hover>a {
+  background-color: #f0f0f0;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 150px;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+.dropdown li a {
+  color: #1a237e;
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown li a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-arrow {
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #1a237e;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 /* Navbar */
 
 h1 {
-    text-align: center;
-    color: #2c3e50;
+  text-align: center;
+  color: #2c3e50;
 }
 
 #faculty-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .faculty-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    max-width: 1200px;
-    gap: 10px;
-    margin: 0 auto;
-    padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  gap: 10px;
+  margin: 0 auto;
+  padding: 20px;
 }
+
 .faculty-info {
-    background-color: #3498db;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+  background-color: #3498db;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
+
 .faculty-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    object-fit: cover;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
 }
+
 .faculty-name {
-    font-size: 1.5em;
-    margin: 0 0 5px 0;
+  font-size: 1.5em;
+  margin: 0 0 5px 0;
 }
+
 .faculty-department {
-    font-style: italic;
-    margin-bottom: 10px;
+  font-style: italic;
+  margin-bottom: 10px;
 }
+
 .faculty-education {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
+
 .faculty-contact p {
-    display: block; /* Ensures email and phone are on separate lines */
-    margin: 0.5rem 0; /* Adds space between the two sections */
+  display: block;
+  /* Ensures email and phone are on separate lines */
+  margin: 0.5rem 0;
+  /* Adds space between the two sections */
 }
+
 .faculty-contact {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
 }
+
 .faculty-contact a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
+
 .faculty-content {
-    padding: 20px;
+  padding: 20px;
 }
+
 @media (min-width: 768px) {
-    .faculty-card {
-        flex-direction: row;
-    }
-    .faculty-info {
-        width: 30%;
-    }
-    .faculty-content {
-        width: 70%;
-    }
+  .faculty-card {
+    flex-direction: row;
+  }
+
+  .faculty-info {
+    width: 30%;
+  }
+
+  .faculty-content {
+    width: 70%;
+  }
 }

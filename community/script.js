@@ -189,11 +189,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Populate mentors list
   const mentors = [
-    { name: "Dr. Birmohan Singh", status: "online" , profile: "http://sliet.ac.in/wp-content/uploads/avatars/5/6fc17d6735998f4f22a0e91fbf43b75c-bpfull.jpg" },
-    { name: "Dr. Manoj Sachan", status: "offline", profile: "http://sliet.ac.in/wp-content/uploads/avatars/6/605c66bd3e3bc-bpfull.jpg" },
-    { name: "Dr. Gurjinder Kaur", status: "online", profile: "http://sliet.ac.in/wp-content/uploads/avatars/14/5f2245e7a7f1bde5dee5bda48e09d411-bpfull.jpg" },
-    { name: "Dr. Jagdeep Singh", status: "online", profile:"http://sliet.ac.in/wp-content/uploads/avatars/466/66f81ca30f4ff-bpfull.jpg" },
-    { name: "Dr. Manminder Singh", status: "offline", profile:"http://sliet.ac.in/wp-content/uploads/avatars/16/66693282b6269-bpfull.jpg" },
+    { name: "Dr. Birmohan Singh", status: "online" , profile: "../assets/images/F1.jpg" },
+    { name: "Dr. Manoj Sachan", status: "offline", profile: "../assets/images/F4.jpg" },
+    { name: "Dr. Gurjinder Kaur", status: "online", profile: "../assets/images/F5.jpg" },
+    { name: "Dr. Jagdeep Singh", status: "online", profile:"../assets/images/F7.jpg" },
+    { name: "Dr. Manminder Singh", status: "offline", profile:"../assets/images/F8.jpg" },
   ];
 
   mentors.forEach((mentor) => {

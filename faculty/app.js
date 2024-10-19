@@ -326,7 +326,7 @@ const facultyData = [
     education: "Ph.D., M.Tech, B.Tech.",
     email: "jaspalsingh@sliet.ac.in",
     phone: "01672-253327",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/36/e0a878e8162fd75cb5eb6929d98df5c1-bpfull.jpg",
+    photo: "../assets/images/F14.jpg",
     professor_details: [
       {
           "name": "Jaspal Singh",
@@ -354,7 +354,7 @@ const facultyData = [
     education: "Ph.D., M.Tech, B.Tech.",
     email: "rahulgautam@sliet.ac.in",
     phone: "+91-1672-25 3612",
-    photo: "http://sliet.ac.in/wp-content/uploads/avatars/350/666bf221c60a0-bpfull.jpg",
+    photo: "../assets/images/F15.jpg",
     professor_details: [
       {
           "name": "Rahul Gautam",
@@ -384,7 +384,7 @@ const facultyData = [
     email: "sachdeva.jp@gmail.com",
     phone: "+91-9988380938",
     photo:
-      "http://sliet.ac.in/wp-content/uploads/avatars/344/64edd5a68d11b-bpfull.jpg",
+      "../assets/images/F16.jpg",
       professor_details: [
         {
             "name": "Dr. Jatinder Pal Singh",
@@ -412,7 +412,7 @@ const facultyData = [
     email: "sukhpreet.manshahia@gmail.com",
     phone: "9463697946",
     photo:
-      "http://sliet.ac.in/wp-content/uploads/avatars/353/60544f9339252-bpfull.jpg",
+      "../assets/images/F18.jpg",
       professor_details: [
         {
             "name": "Sukhpreet Singh",
@@ -468,7 +468,7 @@ const facultyData = [
     email: "chinu@sliet.ac.in",
     phone: "9915025805",
     photo:
-      "http://sliet.ac.in/wp-content/uploads/avatars/477/605067c46b9c6-bpfull.jpg",
+      "../assets/images/F19.jpg",
       professor_details: [
         {
             "name": "Chinu",
@@ -498,7 +498,7 @@ const facultyData = [
     email: "contactvikashgarg@gmail.com",
     phone: "9988610629",
     photo:
-      "http://sliet.ac.in/wp-content/uploads/avatars/457/605b0275612df-bpfull.jpg",
+      "../assets/images/F20.jpg",
       professor_details: [
         {
             "name": "Dr. Vikash Kumar Garg",
@@ -554,7 +554,7 @@ const facultyData = [
   email: "NA",
   phone: "NA",
   photo:
-    "https://www.gravatar.com/avatar/6f05b70f110917eb0889a844d9c02124?s=100&r=g&d=mm",
+    "../assets/images/F21.jpg",
     professor_details: [
       {
           "name": "Sakshi Bansal",

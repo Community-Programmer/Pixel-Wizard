@@ -1,5 +1,5 @@
 :root {
-  --primary: #9834ec;
+  --primary: #4a90e2;
   --secondary: #4caf50;
   --accent: #ff6b6b;
   --background: #f0f4f8;
@@ -190,6 +190,7 @@ body {
   font-size: 0.8em;
   margin-left: 5px;
 }
+
 .dropdown li {
   list-style: none;
 }

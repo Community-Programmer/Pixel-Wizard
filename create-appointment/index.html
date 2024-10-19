@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <title>Schedule a Mentorship Appointment</title>
     <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
   </head>
   <body>
-    <!-- Navbar -->
+
     <header>
       <div class="top-bar">
         <div class="container">
@@ -43,15 +44,15 @@
               </a>
             </div>
             <div class="right-content">
-              <div class="quick-link-one">
+              <div class ="quick-link-one">
                 <a href="#" class="quick-link">Quick Links</a>
                 <a href="#" class="quick-link">Overview</a>
                 <a href="#" class="quick-link">Help</a>
               </div>
-              <div class="quick-link-two">
-                <a href="#" class="locate-us">Signup</a>
-                <a href="#" class="locate-us">Signin</a>
-              </div>
+            <div class ="quick-link-two">
+              <a href="/auth/signup.html" class="locate-us">Signup</a>
+              <a href="/auth/login.html" class="locate-us">Signin</a>
+            </div>
             </div>
           </div>
         </div>
@@ -140,69 +141,82 @@
         </div>
       </nav>
     </header>
-    <div class="heading">
-      <!-- <h1 class="main-heading">Contact us</h1> -->
-      <section class="contact-form">
-        <div class="contact">
-          <h2>Contact Us</h2>
+
+    <div class="appointment_container">
+      <div class="background-shape shape-1"></div>
+      <div class="background-shape shape-2"></div>
+      <header class="header">
+        <h1>Schedule Your Mentorship Session</h1>
+      </header>
+      <div class="progress-bar">
+        <div class="progress-step active">
+          <span class="progress-step-number">1</span>
+          <p>Select Mentor</p>
         </div>
-        <span class="contact-text">
-          Have questions or need assistance? Connect with us! Our team is here
-          to support you in every step of your educational journey.
-        </span>
-      </section>
-    </div>
-
-    <div class="contact-section">
-      <!-- <iframe
-        src="https://www.google.com/maps/embed/v1/place?q=5HF5+++FMP,+Unnamed+Road,+Rajanukunte,+Bangalore,+Karnataka+560064&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
-        width="600"
-        height="450"
-        frameborder="0"
-        style="border: 0"
-        allowfullscreen=""
-        aria-hidden="false"
-        tabindex="0"
-        title="map"
-      ></iframe> -->
-
-      <iframe
-        width="600"
-        height="450"
-        frameborder="0"
-        scrolling="no"
-        marginheight="0"
-        marginwidth="0"
-        style="border: 0"
-        allowfullscreen=""
-        aria-hidden="false"
-        tabindex="0"
-        title="map"
-        src="https://maps.google.com/maps?width=600&amp;height=450&amp;hl=en&amp;q=Sant%20Longowal%20Institute%20of%20Engineering%20and%20Technology+(Sant%20Longowal%20Institute%20of%20Engineering%20and%20Technology)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-      ></iframe>
-
-      <div class="contact-information">
-        <div class="contact-upper">
-          <div>
-            <i class="fas fa-location-dot fa-2xl"></i>
-            <div>
-              <h3>Reach Us</h3>
-              <p>5HF5 + FMP, Main Road,</p>
-              <p>Rajanukunte, Bangalore,</p>
-              <p>Karnataka 560064</p>
-            </div>
-          </div>
-          <div>
-            <i class="fas fa-address-book fa-2xl"></i>
-            <div>
-              <h3>Contact Us</h3>
-              <p>SLIET</p>
-              <p>Official number</p>
-              <p>+91-1672-280057</p>
-            </div>
-          </div>
+        <div class="progress-step">
+          <span class="progress-step-number">2</span>
+          <p>Choose Date</p>
+        </div>
+        <div class="progress-step">
+          <span class="progress-step-number">3</span>
+          <p>Pick Time</p>
         </div>
       </div>
+      <form id="appointmentForm">
+        <div class="form-group">
+          <h2>1. Choose Your Mentor</h2>
+          <label for="mentorSelect">Select a Mentor:</label>
+          <select id="mentorSelect" required>
+            <option value="">Choose a mentor</option>
+          </select>
+        </div>
+        <div id="mentorInfo" class="mentor-info"></div>
+        <div class="form-group">
+          <h2>2. Select Appointment Date</h2>
+          <label for="appointmentDate">Select a Date:</label>
+          <input type="date" id="appointmentDate" required disabled />
+        </div>
+        <div class="form-group">
+          <h2>3. Choose Available Time Slot</h2>
+          <label for="appointmentTime">Select a Time:</label>
+          <div id="timeSlots" class="time-slots">
+            <!-- Time slots will be populated dynamically -->
+          </div>
+        </div>
+        <div class="form-group">
+          <h2>4. Additional Information</h2>
+          <label for="appointmentNotes">Additional Notes:</label>
+          <textarea
+            id="appointmentNotes"
+            rows="4"
+            placeholder="Any additional information for your mentor"
+          ></textarea>
+        </div>
+        <button type="submit" id="submitButton" disabled>
+          Schedule Appointment
+        </button>
+      </form>
     </div>
+
+    <div id="successPage" class="success-page" style="display: none">
+      <div class="success-content">
+        <div class="success-icon">✅</div>
+        <h2>Appointment Scheduled Successfully!</h2>
+        <div class="appointment-details">
+          <h3>Appointment Details</h3>
+          <p><strong>Mentor:</strong> <span id="successMentor"></span></p>
+          <p><strong>Date:</strong> <span id="successDate"></span></p>
+          <p><strong>Time:</strong> <span id="successTime"></span></p>
+          <p>
+            <strong>Additional Notes:</strong> <span id="successNotes"></span>
+          </p>
+        </div>
+        <button id="newAppointmentBtn" class="primary-btn">
+          Schedule Another Appointment
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

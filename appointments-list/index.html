@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Mentorship Appointments</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="background-shape shape-1"></div>
+      <div class="background-shape shape-2"></div>
+      <h1>Your Mentorship Appointments</h1>
+    </header>
+
+    <main class="container">
+      <div class="filters">
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search appointments..."
+            aria-label="Search appointments"
+          />
+        </div>
+        <div class="filter-dropdown">
+          <select id="statusFilter" aria-label="Filter by status">
+            <option value="all">All Statuses</option>
+            <option value="pending">Pending</option>
+            <option value="scheduled">Scheduled</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="appointmentsContainer" class="appointments-grid">
+        <!-- Appointments will be dynamically inserted here -->
+      </div>
+    </main>
+
+   <script src="script.js"></script>
+  </body>
+</html>

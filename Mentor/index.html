@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <title>Mentor Admin Dashboard</title>
     <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
   </head>
   <body>
-    <!-- Navbar -->
+
     <header>
       <div class="top-bar">
         <div class="container">
@@ -43,15 +44,15 @@
               </a>
             </div>
             <div class="right-content">
-              <div class="quick-link-one">
+              <div class ="quick-link-one">
                 <a href="#" class="quick-link">Quick Links</a>
                 <a href="#" class="quick-link">Overview</a>
                 <a href="#" class="quick-link">Help</a>
               </div>
-              <div class="quick-link-two">
-                <a href="#" class="locate-us">Signup</a>
-                <a href="#" class="locate-us">Signin</a>
-              </div>
+            <div class ="quick-link-two">
+              <a href="/auth/signup.html" class="locate-us">Signup</a>
+              <a href="/auth/login.html" class="locate-us">Signin</a>
+            </div>
             </div>
           </div>
         </div>
@@ -140,69 +141,101 @@
         </div>
       </nav>
     </header>
-    <div class="heading">
-      <!-- <h1 class="main-heading">Contact us</h1> -->
-      <section class="contact-form">
-        <div class="contact">
-          <h2>Contact Us</h2>
+
+    <main>
+      <div class="container">
+        <div class="welcome-card">
+          <h1>Welcome back, Mentor!</h1>
+          <p>Here's an overview of your mentorship appointments for today.</p>
         </div>
-        <span class="contact-text">
-          Have questions or need assistance? Connect with us! Our team is here
-          to support you in every step of your educational journey.
-        </span>
-      </section>
-    </div>
 
-    <div class="contact-section">
-      <!-- <iframe
-        src="https://www.google.com/maps/embed/v1/place?q=5HF5+++FMP,+Unnamed+Road,+Rajanukunte,+Bangalore,+Karnataka+560064&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
-        width="600"
-        height="450"
-        frameborder="0"
-        style="border: 0"
-        allowfullscreen=""
-        aria-hidden="false"
-        tabindex="0"
-        title="map"
-      ></iframe> -->
+        <div class="stats-container">
+          <div class="stat-card">
+            <h2 id="scheduled-count">0</h2>
+            <p>Scheduled Appointments</p>
+          </div>
+          <div class="stat-card">
+            <h2 id="pending-count">0</h2>
+            <p>Pending Appointments</p>
+          </div>
+          <div class="stat-card">
+            <h2 id="cancelled-count">0</h2>
+            <p>Cancelled Appointments</p>
+          </div>
+        </div>
 
-      <iframe
-        width="600"
-        height="450"
-        frameborder="0"
-        scrolling="no"
-        marginheight="0"
-        marginwidth="0"
-        style="border: 0"
-        allowfullscreen=""
-        aria-hidden="false"
-        tabindex="0"
-        title="map"
-        src="https://maps.google.com/maps?width=600&amp;height=450&amp;hl=en&amp;q=Sant%20Longowal%20Institute%20of%20Engineering%20and%20Technology+(Sant%20Longowal%20Institute%20of%20Engineering%20and%20Technology)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-      ></iframe>
-
-      <div class="contact-information">
-        <div class="contact-upper">
-          <div>
-            <i class="fas fa-location-dot fa-2xl"></i>
-            <div>
-              <h3>Reach Us</h3>
-              <p>5HF5 + FMP, Main Road,</p>
-              <p>Rajanukunte, Bangalore,</p>
-              <p>Karnataka 560064</p>
+        <div class="appointments-section">
+          <div class="appointments-header">
+            <h2 class="appointments-title">Upcoming Appointments</h2>
+            <div class="search-bar">
+              <input
+                type="text"
+                placeholder="Search appointments..."
+                id="search-input"
+              />
             </div>
           </div>
-          <div>
-            <i class="fas fa-address-book fa-2xl"></i>
-            <div>
-              <h3>Contact Us</h3>
-              <p>SLIET</p>
-              <p>Official number</p>
-              <p>+91-1672-280057</p>
-            </div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Student Name</th>
+                  <th>Status</th>
+                  <th>Date and Time</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="appointment-table">
+                <!-- Table rows will be dynamically added here -->
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-    </div>
+      <div id="scheduleDialog" class="dialog">
+        <div class="dialog-content">
+          <h2>Schedule Appointment</h2>
+          <input type="date" id="appointmentDate" />
+          <input type="time" id="appointmentTime" />
+          <textarea
+            id="additionalNotes"
+            placeholder="Additional notes"
+          ></textarea>
+          <button id="confirmSchedule">Confirm</button>
+          <button class="closeDialog">Close</button>
+        </div>
+      </div>
+
+      <div id="cancelDialog" class="dialog">
+        <div class="dialog-content">
+          <h2>Cancel Appointment</h2>
+          <textarea
+            id="cancellationReason"
+            placeholder="Reason for cancellation"
+          ></textarea>
+          <button id="confirmCancel">Confirm</button>
+          <button class="closeDialog">Close</button>
+        </div>
+      </div>
+
+      <div class="time-slots-section">
+        <h2>Selected Time Slots</h2>
+        <div class="time-slot-controls">
+          <div class="input-group">
+            <label for="slotDate">Select Date</label>
+            <input type="date" id="slotDate" required />
+          </div>
+          <div class="input-group">
+            <label for="slotTime">Select Time</label>
+            <input type="time" id="slotTime" required />
+          </div>
+          <button id="addTimeSlot" class="primary-btn">Add Time Slot</button>
+        </div>
+        <ul id="timeSlotsList"></ul>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
   </body>
 </html>

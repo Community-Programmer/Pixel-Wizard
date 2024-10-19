@@ -7,6 +7,14 @@
   --light-text: #ffffff;
   --card-bg: #ffffff;
   --primary-color: #4a90e2;
+  --secondary-color: #f3f4f6;
+  --text-color: #333;
+  --text-color-light: #666;
+  --background-color: #ffffff;
+  --accent-color: #ff6b6b;
+  --success-color: #2ecc71;
+  --border-color: #e2e8f0;
+  --transition-speed: 0.3s;
 }
 
 /* Navbar */
@@ -42,10 +50,21 @@ body {
   align-items: center;
 }
 
-.left-content,
+.left-content {
+  display: flex;
+  align-items: center;
+}
+
 .right-content {
   display: flex;
   align-items: center;
+  gap: 50px;
+}
+
+.quick-link-one {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .language-select {
@@ -69,7 +88,7 @@ body {
 .quick-link {
   color: white;
   text-decoration: none;
-  margin-left: 15px;
+  /* margin-left: 15px; */
 }
 
 .locate-us {
@@ -171,6 +190,9 @@ body {
   font-size: 0.8em;
   margin-left: 5px;
 }
+.dropdown li {
+  list-style: none;
+}
 
 .mobile-menu-toggle {
   display: none;
@@ -243,6 +265,7 @@ body {
   color: var(--light-text);
   position: relative;
   overflow: hidden;
+  z-index: -1;
 }
 
 .hero::before {

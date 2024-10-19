@@ -2,9 +2,12 @@
 const mobileMenu = document.querySelector(".mobile-menu");
 const navLinks = document.querySelector(".nav-links");
 
-mobileMenu.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
+if(mobileMenu){
+
+  mobileMenu.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+}
 
 // Mentor carousel
 const mentorSlides = document.querySelectorAll(".mentor-slide");
@@ -144,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   openChatBtn.addEventListener("click", () => {
+    console.log('clicked')
     chatContainer.classList.add("active");
     openChatBtn.style.display = "none";
     addMessage("Hello! I'm the SLIET Assistant. How can I help you today?");

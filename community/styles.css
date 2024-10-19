@@ -1,5 +1,5 @@
 :root {
-  --primary: #9834ec;
+  --primary: #4a90e2;
   --secondary: #4caf50;
   --accent: #ff6b6b;
   --background: #f0f4f8;
@@ -177,6 +177,7 @@ body {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
